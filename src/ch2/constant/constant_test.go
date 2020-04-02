@@ -28,9 +28,10 @@ const (
 	Sunday
 )
 
-// 使用下划线跳过自增
+// 把 int 定义一个别名 AudioOutput
 type AudioOutput int
 
+// 使用下划线跳过自增
 const (
 	OutMute AudioOutput = iota
 	OutMono
@@ -62,7 +63,9 @@ func TestConstant(t *testing.T) {
 }
 
 func TestConstant2(t *testing.T) {
-	var a int64 = 7
 	t.Log(Readable, Writable, Executable)
+	var a int64 = 7
 	t.Log(a&Readable, a&Writable, a&Executable)
+	var b int64 = 6
+	t.Log(b&Readable, b&Writable, b&Executable)
 }
